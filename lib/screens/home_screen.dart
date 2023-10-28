@@ -5,19 +5,26 @@ class HomeScreen extends StatelessWidget {
   //nombre de ruta no deben existir dos rutas con el mismo nombre
 
   static const String routerName = 'Home';
-   
+
   const HomeScreen({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
           title: const Text('Home'),
-      ),
-      drawer: const SideMenu(),
-      body: const Center(
-         child: Text('HomeScreen'),
-      ),
-    );
+        ),
+        drawer: const SideMenu(),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('isDarkmode: '),
+            Divider(),
+            Text('Género: '),
+            Divider(),
+            Text('Nombre de usuario: '),
+            Divider(),
+          ],
+        ));
   }
 }
