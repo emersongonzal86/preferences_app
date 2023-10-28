@@ -24,7 +24,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         drawer: const SideMenu(),
         body: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

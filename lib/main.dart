@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:preferences_app/screens/screens.dart';
+import 'package:preferences_app/share_preferences/preferences.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Preferences.init();
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,8 +22,9 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routerName,
       routes: {
         HomeScreen.routerName: (_) => const HomeScreen(),
-        SettingsScreen.routerName: ( _ )=> const SettingsScreen(),
+        SettingsScreen.routerName: (_) => const SettingsScreen(),
       },
+      theme: ThemeData.light(),
     );
   }
 }
